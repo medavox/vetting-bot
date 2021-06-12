@@ -23,7 +23,7 @@
 
 ## Docker
 
-A docker image of the latest release of this bot can be found at `thenumberone/vettingbot`.
+A docker image of the latest release of this bot can be found on Docker Hub at [thenumeralone/vettingbot](https://hub.docker.com/r/thenumeralone/vettingbot).
 
 For easy self hosting of the bot, first create the bot application in Discord's developer tools.
 Then, rename `example-bot.env` to `bot.env` and `example-db.env` to `db.env`. Make sure to modify 
