@@ -63,7 +63,6 @@ dependencies {
 
     implementation("net.bytebuddy:byte-buddy-agent:1.10.15")
     implementation("com.discord4j:discord4j-core:3.2.0-M3")
-    //implementation("Discord4J.Discord4J:Discord4J:master-SNAPSHOT")//TODO: 3.2.0 when it comes out
     implementation("io.projectreactor.kotlin:reactor-kotlin-extensions:1.1.1")
     implementation("org.liquigraph:liquigraph-core:4.0.2")
     implementation("io.github.microutils:kotlin-logging:2.0.4")
