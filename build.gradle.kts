@@ -47,19 +47,25 @@ repositories {
 }
 
 dependencies {
-//    implementation(platform("io.projectreactor:reactor-bom:2020.0.0-M2"))
-    implementation("com.discord4j:discord4j-core:3.2.0-SNAPSHOT")
-    implementation("org.liquigraph:liquigraph-core:4.0.2")
+
+    //Kotlin deps
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core")
-    implementation("net.bytebuddy:byte-buddy-agent")
-    implementation("org.springframework.boot:spring-boot-starter-data-neo4j")
-    implementation("io.github.microutils:kotlin-logging:2.0.4")
-    implementation("io.projectreactor.kotlin:reactor-kotlin-extensions")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-reactor")
     implementation("org.jetbrains.kotlin:kotlin-reflect")
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-reactor")
-    implementation("org.springframework.boot:spring-boot-starter-logging")
+
+    //Spring deps
     annotationProcessor("org.springframework.boot:spring-boot-configuration-processor")
+    implementation("org.springframework.boot:spring-boot-starter-data-neo4j")
+    implementation("org.springframework.boot:spring-boot-starter-logging")
+
+
+    implementation("net.bytebuddy:byte-buddy-agent")
+    implementation("com.discord4j:discord4j-core:3.2.0-SNAPSHOT")
+    implementation("io.projectreactor.kotlin:reactor-kotlin-extensions")
+    implementation("org.liquigraph:liquigraph-core:4.0.2")
+    implementation("io.github.microutils:kotlin-logging:2.0.4")
+
     testImplementation("org.springframework.boot:spring-boot-starter-test") {
         exclude(group = "org.junit.vintage", module = "junit-vintage-engine")
     }
