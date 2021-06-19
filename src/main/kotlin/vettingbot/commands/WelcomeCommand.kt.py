@@ -1,25 +1,24 @@
-/*
- * Copyright (C) 2020  Rosetta Roberts <rosettafroberts@gmail.com>
- *
- * This file is part of VettingBot.
- *
- * VettingBot is free software: you can redistribute it and/or modify
- * it under the terms of the GNU Affero General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- *
- * VettingBot is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU Affero General Public License for more details.
- *
- * You should have received a copy of the GNU Affero General Public License
- * along with VettingBot.  If not, see <https://www.gnu.org/licenses/>.
- */
+"""
+Copyright (C) 2020  Rosetta Roberts <rosettafroberts@gmail.com>
 
-package vettingbot.commands
+This file is part of VettingBot.
 
-import discord4j.common.util.Snowflake
+VettingBot is free software: you can redistribute it and/or modify
+it under the terms of the GNU Affero General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+VettingBot is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU Affero General Public License for more details.
+
+You should have received a copy of the GNU Affero General Public License
+along with VettingBot.  If not, see <https://www.gnu.org/licenses/>.
+"""
+
+from discord.abc import Snowflake
+
 import discord4j.core.`object`.reaction.ReactionEmoji
 import discord4j.core.event.domain.message.MessageCreateEvent
 import discord4j.core.spec.EmbedCreateSpec
@@ -37,7 +36,7 @@ import vettingbot.vetting.MessageService
 
 private val EMOJI_REGEX = Regex("(?<unicode>.)|<?(?:(?<animated>a?):)?(?<name>[^:]*):(?<id>\\d+>?)")
 
-private fun parseEmoji(emoji: String): ReactionEmoji? {
+def _parseEmoji(emoji: String) -> ReactionEmoji?:
     val match = EMOJI_REGEX.matchEntire(emoji) ?: return null
     val unicode = match.groups["unicode"]
     if (unicode != null) {
@@ -45,7 +44,7 @@ private fun parseEmoji(emoji: String): ReactionEmoji? {
     }
     val animated = match.groups["animated"] != null
     return ReactionEmoji.custom(Snowflake.of(match.groups["id"]!!.value), match.groups["name"]!!.value, animated)
-}
+
 
 @Component
 class WelcomeCommand(
